@@ -52,7 +52,7 @@ class YamashitaWoodCutPrint extends WoodCutPrint {
 
 }
 
-/* createWoodCutPrintメソッドはオーバーライドしていないので、親クラスのそれがそのまま実行される */
+/* createWoodCutPrintメソッドはオーバーライドしていない(してはいけない)ので、親クラスのそれがそのまま実行される */
 /* thisは各子クラスを指す */
 var tanaka_hannga = new TanakaWoodCutPrint();
 tanaka_hannga.createWoodCutPrint();

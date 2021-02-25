@@ -9,4 +9,4 @@ node ファイル名.js<br><br>
 ・抽象クラスのインスタンスを作成(new クラス名())してはいけない<br>
 ・public private static get setについて調べる<br>
 ・他のファイルと記載されているクラス名が重複していないのにもかかわらず赤線が表示されることがある(コンパイルと実行はできる)<br>
-・class以外の型はtype 型名 = {}(interface 型名 {}ではない)
+・class以外の型はtype 型名 = {}(interface 型名 {}ではない)<br>

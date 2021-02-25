@@ -1,6 +1,3 @@
-/* テンプレートメソッドパターン */
-/* tsc templatemethod.ts */
-/* node templatemethod.js */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,56 +11,48 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-/* テンプレートクラス */
-var WoodCutPrint = /** @class */ (function () {
-    function WoodCutPrint() {
+/* 抽象クラス */
+var Money = /** @class */ (function () {
+    function Money(value) {
+        this.value = value;
     }
-    /* 各メソッドの引数とそれらの型、および戻り値の型だけ決める */
-    /* 具体的な処理手順は各クラスで再定義(オーバーロード)して決める */
-    WoodCutPrint.prototype.draw = function () { };
-    WoodCutPrint.prototype.cut = function () { };
-    WoodCutPrint.prototype.print = function () { };
-    WoodCutPrint.prototype.createWoodCutPrint = function () {
-        this.draw();
-        this.cut();
-        this.print();
+    Money.prototype.indicateValue = function () {
+        return this.getPrefix() + this.value.toString() + this.getPostFix();
     };
-    return WoodCutPrint;
+    return Money;
 }());
-/* 親クラスで決めた内容は変えてはいけない(変えたらテンプレートの意味がない) */
-var TanakaWoodCutPrint = /** @class */ (function (_super) {
-    __extends(TanakaWoodCutPrint, _super);
-    function TanakaWoodCutPrint() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var Dollar = /** @class */ (function (_super) {
+    __extends(Dollar, _super);
+    /* 抽象クラスを継承した場合は必ずsuper() */
+    /* 親クラスのコンストラクタを実行 */
+    function Dollar(value) {
+        return _super.call(this, value) || this;
     }
-    TanakaWoodCutPrint.prototype.draw = function () {
-        console.log("ウサギの絵を書いた");
+    /* テンプレートメソッドの流れ */
+    /* 1. 親クラスで抽象メソッドを作成(メソッドのおおまかな枠組みを決める) */
+    /* 2. 子クラスで抽象メソッドをオーバライド(具体的なメソッドの処理手順を決める) */
+    Dollar.prototype.getPrefix = function () {
+        return "$";
     };
-    TanakaWoodCutPrint.prototype.cut = function () {
-        console.log("正方形にカットした");
+    Dollar.prototype.getPostFix = function () {
+        return "";
     };
-    TanakaWoodCutPrint.prototype.print = function () {
-        console.log("版画インクとバレンを使って豪快にプリントした");
-    };
-    return TanakaWoodCutPrint;
-}(WoodCutPrint));
-var YamashitaWoodCutPrint = /** @class */ (function (_super) {
-    __extends(YamashitaWoodCutPrint, _super);
-    function YamashitaWoodCutPrint() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    return Dollar;
+}(Money));
+var Yen = /** @class */ (function (_super) {
+    __extends(Yen, _super);
+    function Yen(value) {
+        return _super.call(this, value) || this;
     }
-    YamashitaWoodCutPrint.prototype.draw = function () {
-        console.log("ライオンの絵を書いた");
+    Yen.prototype.getPrefix = function () {
+        return "";
     };
-    YamashitaWoodCutPrint.prototype.cut = function () {
-        console.log("三角形にカットした");
+    Yen.prototype.getPostFix = function () {
+        return "円";
     };
-    YamashitaWoodCutPrint.prototype.print = function () {
-        console.log("版画インクとプレスを使って薄めにプリントした");
-    };
-    return YamashitaWoodCutPrint;
-}(WoodCutPrint));
-var tanaka_hannga = new TanakaWoodCutPrint();
-tanaka_hannga.createWoodCutPrint();
-var yamashita_hannga = new YamashitaWoodCutPrint();
-yamashita_hannga.createWoodCutPrint();
+    return Yen;
+}(Money));
+var yen_1 = new Yen(100);
+console.log(yen_1.indicateValue());
+var dollar_1 = new Dollar(200);
+console.log(dollar_1.indicateValue());

@@ -1,60 +1,62 @@
 /* テンプレートメソッドパターン */
-/* tsc templatemethod.ts */
-/* node templatemethod.js */
 
-/* テンプレートクラス */
-class WoodCutPrint {
+/* 抽象クラス */
+abstract class Money {
 
-    /* 各メソッドの引数とそれらの型、および戻り値の型だけ決める? */
-    /* 具体的な処理手順は各クラスで再定義(オーバーロード)して決める? */
-    draw(): void {}
-    cut(): void {}
-    print(): void {}
+    value: number;
 
-    createWoodCutPrint(): void {
-        this.draw();
-        this.cut();
-        this.print();
+    constructor(value: number) {
+        this.value = value;
+    }
+
+    /* 抽象メソッドは引数と戻り値およびそれらの型のみ記載し、処理({})は記載しない。 */
+    abstract getPrefix(): string;
+    abstract getPostFix(): string;
+
+    indicateValue(): string {
+        return this.getPrefix() + this.value.toString() + this.getPostFix();
     }
 
 }
 
-/* 親クラスで決めた内容は変えてはいけない(変えたらテンプレートの意味がない) */
-class TanakaWoodCutPrint extends WoodCutPrint {
+class Dollar extends Money {
 
-    draw(): void {
-        console.log("ウサギの絵を書いた");
+    /* 抽象クラスを継承した場合は必ずsuper() */
+    /* 親クラスのコンストラクタを実行 */
+    constructor(value: number) {
+        super(value);
     }
 
-    cut(): void {
-        console.log("正方形にカットした");
+    /* テンプレートメソッドの流れ */
+    /* 1. 親クラスで抽象メソッドを作成(メソッドのおおまかな枠組みを決める) */
+    /* 2. 子クラスで抽象メソッドをオーバライド(具体的なメソッドの処理手順を決める) */
+    getPrefix(): string {
+        return "$";
     }
 
-    print(): void {
-        console.log("版画インクとバレンを使って豪快にプリントした");
-    }
-
-}
-
-class YamashitaWoodCutPrint extends WoodCutPrint {
-
-    draw(): void {
-        console.log("ライオンの絵を書いた");
-    }
-
-    cut(): void {
-        console.log("三角形にカットした");
-    }
-
-    print(): void {
-        console.log("版画インクとプレスを使って薄めにプリントした");
+    getPostFix(): string {
+        return "";
     }
 
 }
 
-/* createWoodCutPrintメソッドはオーバーライドしていない(してはいけない)ので、親クラスのそれがそのまま実行される */
-/* thisは各子クラスを指す */
-var tanaka_hannga = new TanakaWoodCutPrint();
-tanaka_hannga.createWoodCutPrint();
-var yamashita_hannga = new YamashitaWoodCutPrint();
-yamashita_hannga.createWoodCutPrint();
+class Yen extends Money {
+
+    constructor(value: number) {
+        super(value);
+    }
+
+    getPrefix(): string {
+        return "";
+    }
+
+    getPostFix(): string {
+        return "円";
+    }
+
+}
+
+var yen_1 = new Yen(100);
+console.log(yen_1.indicateValue());
+var dollar_1 = new Dollar(200);
+console.log(dollar_1.indicateValue());

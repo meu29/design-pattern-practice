@@ -91,7 +91,6 @@ class CompositeCommand {
 }
 
 /* client */
-/* 命令する */
 var cc : CompositeCommand = new CompositeCommand();
 cc.append(new TurnOnCommand(new Television()));
 cc.append(new TurnOnCommand(new VideoDeck()));

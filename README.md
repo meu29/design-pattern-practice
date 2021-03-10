@@ -1,10 +1,14 @@
-https://www.techscore.com/tech/DesignPattern/index.html/<br>
-を教科書としてデザインパターンの勉強(コーディング) 一通りやったら別サイトで1から復習<br><br>
+https://techracho.bpsinc.jp/hachi8833/2020_12_18/46071#chain-of-responsibility<br>
+デザインパターンの勉強<br>
 sudo apt install node-typescript<br>
 tsc ファイル名.ts<br>
 node ファイル名.js<br><br>
 
+その他フォルダにtypescriptの文法<br>
+修飾子(publicとprivate)、ジェネリクス、デコレータ、アクセッサ(getterとsetter)<br><br>
+
 メモ<br>
+・インスタンスはクラスを元に作られるオブジェクト<br>
 ・抽象クラス(abstract class クラス名)とインターフェースは同じ働き(?)<br>
 ・抽象クラスのインスタンスを作成(new クラス名())してはいけない<br>
 ・public private static get setについて調べる<br>

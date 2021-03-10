@@ -11,7 +11,7 @@ var test2 = (arg: string): string => {
 console.log(test(1));
 console.log(test2("あああ"));
 
-/* genericを使用 */
+/* generic(型引数)を使用 */
 /* 型の大文字に決まりはない */
 var test_by_generics = <T>(arg: T): T => {
     return arg;
@@ -48,3 +48,9 @@ var genericClass_instance: GenericClass<number, string> = new GenericClass(1, "�
 console.log(genericClass_instance.getOldItem());
 /* getNewItem()でstring型の値を返すようになる */
 console.log(genericClass_instance.getNewItem());
+
+var genericClass_instance2: GenericClass<string, number> = new GenericClass("いいい", 2);
+/* getOldItem()でstring型の値を返すようになる */
+console.log(genericClass_instance2.getOldItem());
+/* getNewItem()でnumber型の値を返すようになる */
+console.log(genericClass_instance2.getNewItem());

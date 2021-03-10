@@ -35,3 +35,8 @@ var genericClass_instance = new GenericClass(1, "あああ");
 console.log(genericClass_instance.getOldItem());
 /* getNewItem()でstring型の値を返すようになる */
 console.log(genericClass_instance.getNewItem());
+var genericClass_instance2 = new GenericClass("いいい", 2);
+/* getOldItem()でstring型の値を返すようになる */
+console.log(genericClass_instance2.getOldItem());
+/* getNewItem()でnumber型の値を返すようになる */
+console.log(genericClass_instance2.getNewItem());

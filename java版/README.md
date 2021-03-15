@@ -5,3 +5,5 @@
 ・呼び出したいクラスはクラスの先頭に書く<br>
 java java版/その他/TestClass.java -> TestClassクラスをクラスの先頭に書く<br>
 UserクラスをTestClassより前に書いてしまうとエラー<br><br>
+
+Cannot instantiate the type クラス名 => そのクラスが抽象クラスなのでインスタンスを作れない<br><br> 

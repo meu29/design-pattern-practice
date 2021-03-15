@@ -1,6 +1,6 @@
 package java版.その他;
 
-class TestClass {
+class MainClass {
 
     public static void main(String[] args) {
         

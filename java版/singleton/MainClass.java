@@ -17,6 +17,7 @@ public class MainClass {
 
         /* 1度だけインスタンスを作成(=1回だけ乱数を作成) */
         for (int i = 0; i <= 2; i++) {
+            /* staticメソッドなのでインタンスを作成せずにクラスから直接使用できる */
             SingletonClass singletonClassInstance = SingletonClass.getInstance();
             System.out.println(singletonClassInstance.randnum);
         }

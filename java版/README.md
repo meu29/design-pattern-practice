@@ -9,3 +9,6 @@ java java版/その他/TestClass.java -> TestClassクラスをクラスの先頭
 UserクラスをTestClassより前に書いてしまうとエラー<br><br>
 
 Cannot instantiate the type クラス名 => そのクラスが抽象クラスなのでインスタンスを作れない<br><br> 
+
+String[] array = new String[1]; => 文字列の要素を持つ長さ1の配列<br>
+array.locker[0] = "<<文字列>>";<br>

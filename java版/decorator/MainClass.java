@@ -41,6 +41,7 @@ class PremiumUser implements User {
 }
 
 /* Userインターフェースと、2つのxxUserクラスを書き換えることなく機能を拡張(リピート再生機能) */
+/* デコレータクラスは必ず拡張したいメソッドを持つクラスと同じインターフェースを実装 */
 class Decorator implements User {
 
     User userInstance;

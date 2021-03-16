@@ -52,7 +52,7 @@ class NameViewer {
 
 }
 
-/* PersonAをPersonBの代わりに使えるようにする */
+/* PersonAをPersonBの代わりに使えるようにする(2つのクラスの相違を埋める) */
 class Adapter extends PersonB {
 
     PersonA personAInstance;

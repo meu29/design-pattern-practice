@@ -11,4 +11,7 @@ UserクラスをTestClassより前に書いてしまうとエラー<br><br>
 Cannot instantiate the type クラス名 => そのクラスが抽象クラスなのでインスタンスを作れない<br><br> 
 
 String[] array = new String[1]; => 文字列の要素を持つ長さ1の配列<br>
-array.locker[0] = "<<文字列>>";<br>
+array.locker[0] = "<<文字列>>";<br><br>
+
+リストの作成 => ArrayList<要素の型> リスト名 = new ArrayList<要素の型>();<br>
+リストからの要素の取り出し => リスト名.get(i);<br>

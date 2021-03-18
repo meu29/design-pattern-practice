@@ -15,5 +15,6 @@ node ファイル名.js<br><br>
 ・class以外の型はtype 型名 = {}(interface 型名 {}ではない)<br>
 ・あるクラスのプロパティに別のクラスのインスタンスを代入することを移譲と呼ぶ<br>
 ・クラスメソッド = static <=> インスタンスメソッド<br>
+・抽象クラス(abstract)でないクラス(普通のクラス)は具象クラスと呼ばれる<br>
 
 https://isolution.pro/t/design-pattern/proxy-pattern/dezain-pata-n-purokishipata-n

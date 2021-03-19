@@ -7,6 +7,8 @@ node ファイル名.js<br><br>
 その他フォルダにtypescriptの文法<br>
 修飾子(publicとprivate)、ジェネリクス、デコレータ、アクセッサ(getterとsetter)<br><br>
 
+Reactデザインパターンフォルダに高階コンポーネントとレンダープロップ(Computed Componentはまだ)<br><br>
+
 メモ<br>
 ・インスタンスはクラスを元に作られるオブジェクト<br>
 ・抽象クラス(abstract class クラス名)とインターフェースは同じ働き(?)<br>
@@ -17,4 +19,3 @@ node ファイル名.js<br><br>
 ・クラスメソッド = static <=> インスタンスメソッド<br>
 ・抽象クラス(abstract)でないクラス(普通のクラス)は具象クラスと呼ばれる<br>
 
-https://isolution.pro/t/design-pattern/proxy-pattern/dezain-pata-n-purokishipata-n

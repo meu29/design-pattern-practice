@@ -1,4 +1,4 @@
-Main(2).java -> java言語で学ぶデザインパターン入門br>
+Main(2).java -> java言語で学ぶデザインパターン入門 徹底攻略の時点で理解できたものはやらない<br>
 MainClass.java -> javaデザインパターン徹底攻略<br>
 
 AbstractFactory Prototype Iteratorがまだ<br><br>

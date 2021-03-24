@@ -1,4 +1,5 @@
-https://www.amazon.co.jp/Java%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%BE%B9%E5%BA%95%E6%94%BB%E7%95%A5-%E6%A8%99%E6%BA%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%82%BA%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-%E6%97%A5%E7%AB%8B%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E9%83%A8/dp/4774115797<br><br>
+Main(2).java -> java言語で学ぶデザインパターン入門br>
+MainClass.java -> javaデザインパターン徹底攻略<br>
 
 AbstractFactory Prototype Iteratorがまだ<br><br>
 
@@ -20,4 +21,6 @@ array.locker[0] = "<<文字列>>";<br><br>
 要素の追加 => リスト名.set(値); もしくはリスト名.set(位置, 値)<br>
 既に要素が存在する位置を指定すると更新される<br>
 要素数 => リスト名.size()<br>
-要素の削除 => リスト名.remove(要素); 
+要素の削除 => リスト名.remove(要素); <br><br>
+
+エラー: identifierがありません => 予約語を変数名にしてしまっているのが原因 String charなど<br><br>

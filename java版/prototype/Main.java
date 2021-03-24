@@ -18,6 +18,7 @@ class Main {
         product2.use("fugafuga");
 
         manager.register("Mailadress Creator", new MailAdressCreator("icloud.com"));
+        /* provide = icloud.comになる */
         Product product3 = manager.create("Mailadress Creator");
         product3.use("piyopiyo");
 

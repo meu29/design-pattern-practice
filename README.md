@@ -1,21 +1,21 @@
-https://techracho.bpsinc.jp/hachi8833/2020_12_18/46071#chain-of-responsibility<br>
-デザインパターンの勉強<br>
-sudo apt install node-typescript<br>
-tsc ファイル名.ts<br>
-node ファイル名.js<br><br>
+・String[] argsの中身はコマンドライン引数<br> 
+(例)java java版/その他/TestClass.java 1 "あああ"<br>
+->System.out.println(args[0]); => 1 System.out.println(args[1]); => "あああ"<br><br>
 
-その他フォルダにtypescriptの文法<br>
-修飾子(publicとprivate)、ジェネリクス、デコレータ、アクセッサ(getterとsetter)<br><br>
+・呼び出したいクラスはクラスの先頭に書く<br>
+java java版/その他/TestClass.java -> TestClassクラスをクラスの先頭に書く<br>
+UserクラスをTestClassより前に書いてしまうとエラー<br><br>
 
-Reactデザインパターンフォルダに高階コンポーネントとレンダープロップ(Computed Componentはまだ)<br><br>
+Cannot instantiate the type クラス名 => そのクラスが抽象クラスなのでインスタンスを作れない<br><br> 
 
-メモ<br>
-・インスタンスはクラスを元に作られるオブジェクト<br>
-・抽象クラス(abstract class クラス名)とインターフェースは同じ働き(?)<br>
-・抽象クラスのインスタンスを作成(new クラス名())してはいけない<br>
-・他のファイルと記載されているクラス名が重複していないのにもかかわらず赤線が表示されることがある(コンパイルと実行はできる)<br>
-・class以外の型はtype 型名 = {}(interface 型名 {}ではない)<br>
-・あるクラスのプロパティに別のクラスのインスタンスを代入することを移譲と呼ぶ<br>
-・クラスメソッド = static <=> インスタンスメソッド<br>
-・抽象クラス(abstract)でないクラス(普通のクラス)は具象クラスと呼ばれる<br>
+String[] array = new String[1]; => 文字列の要素を持つ長さ1の配列<br>
+array.locker[0] = "<<文字列>>";<br><br>
 
+リストの作成 => ArrayList<要素の型> リスト名 = new ArrayList<要素の型>();<br>
+リストからの要素の取り出し => リスト名.get(i);<br>
+要素の追加 => リスト名.set(値); もしくはリスト名.set(位置, 値)<br>
+既に要素が存在する位置を指定すると更新される<br>
+要素数 => リスト名.size()<br>
+要素の削除 => リスト名.remove(要素); <br><br>
+
+エラー: identifierがありません => 予約語を変数名にしてしまっているのが原因 String charなど<br><br>

@@ -2,62 +2,108 @@ package abstract_factory;
 
 class Main {
     public static void main(String[] args) {
-        CorpSiteFactory f1 = new CorpSiteFactory();
-        System.out.println(f1.createHeader());
-        System.out.println(f1.createMainContent());
-        System.out.println(f1.createFooter());
+
+        Factory f1 = Factory.getFactory("android");
+        Phone p1 = f1.createPhone();
+        p1.call();
+        Tablet t1 = f1.createTablet();
+        t1.draw();
+        
+        Factory f2 = Factory.getFactory("ios");
+        Phone p2 = f2.createPhone();
+        p2.call();
+        Tablet t2 = f2.createTablet();
+        t2.draw();
+
     }
 }
 
 /* 抽象的な工場 */
 abstract class Factory {
-    abstract String createHeader();
-    abstract String createMainContent();
-    abstract String createFooter();
+
+    /* クライアントが具体的な工場を選択するメソッド */
+    static Factory getFactory(String name) {
+        if (name == "android") {
+            return new AndroidFactory();
+        } else {
+            return new IosFactory();
+        }
+    }
+
+    /* 製品を作る抽象メソッド メソッド名は工場間で統一 */
+    abstract Phone createPhone();
+    abstract Tablet createTablet();
+
 }
 
 /* 具体的な工場1 */
-class CorpSiteFactory extends Factory {
+class AndroidFactory extends Factory {
 
-    public String createHeader() {
-        return new CorpSiteHeader().make();
+    public Phone createPhone() {
+        return new Xperia();
     }
 
-    public String createMainContent() {
-        return new CorpSiteMainContent().make();
-    }
-
-    public String createFooter() {
-        return new CorpSiteFooter().make();
+    public Tablet createTablet() {
+        return new MediaPad();
     }
 
 }
 
-/* 抽象的な部品 */
-interface Part {
-    abstract String make();
-}
+/* 具体的な工場2 */
+class IosFactory extends Factory {
 
-/* 具体的なヘッダー部品1(工場1で生産される) */
-class CorpSiteHeader implements Part {
-    public String make() {
-        return "<div><span></span></div>";
+    Phone createPhone() {
+        return new Iphone();
     }
-}
 
-/* 具体的なメインコンテンツ部品1 */
-class CorpSiteMainContent implements Part {
-    public String make() {
-        return "<div><p>これはトップページです</p></div>";
+    Tablet createTablet() {
+        return new Ipad();
     }
+
 }
 
-/* 具体的なフッター部品1 */
-class CorpSiteFooter implements Part {
-    public String make() {
-        return "<div><a herf='/recruit'>採用情報</a></div>";
+/* 抽象的な製品1 */
+abstract class Phone {
+    abstract void call();
+}
+
+/* 抽象的な製品2 */
+abstract class Tablet {
+    abstract void draw();
+}
+
+/* android工場で生産させる具体的な製品1 */
+class Xperia extends Phone {
+
+    void call() {
+        System.out.println("Skype for Android");
     }
+
 }
 
-/* 工場とそれに対応する部品を増やしていく */
-/* 製品は部品をまとめたもの? */
+/* android工場で生産させる具体的な製品2 */
+class MediaPad extends Tablet {
+
+    void draw() {
+        System.out.println("クリスタ for Android");
+    }
+
+}
+
+/* ios工場で生産させる具体的な製品1 */
+class Iphone extends Phone {
+
+    void call() {
+        System.out.println("Skype for IOS");
+    }
+
+}
+
+/* ios工場で生産させる具体的な製品2 */
+class Ipad extends Tablet {
+
+    void draw() {
+        System.out.println("クリスタ for IOS");
+    }
+
+}
